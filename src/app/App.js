@@ -1,41 +1,22 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { v4 } from 'uuid';
+import React from 'react';
+import { Routes , Route } from 'react-router-dom';
+import { QueryClientProvider , QueryClient } from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools';
+import Navbar from '../components/Navbar';
+import Home from '../pages/Home';
+import Courses from '../pages/Courses';
 
 const App = () => {
-    const [name , setName] = useState('');
-    const [refresh , setRefresh] = useState(false);
-    const [users , setUsers] = useState([]);
-
-    const sendNameToServer = () => {
-        if (name) {
-            axios.post('http://localhost:3001/users' , {id: v4() , name: name})
-                .then(res => {
-                    console.log(res);
-                    setRefresh(prev => !prev);
-                })
-                .catch(err => console.log(err))
-        }
-    }
-
-    useEffect(() => {
-        axios.get('http://localhost:3001/users')
-            .then(res => setUsers(res.data))
-            .catch(err => console.log(err))
-    } , [refresh])
-
+    const queryClient = new QueryClient();
     return (
-        <div style={{padding: '20px'}}>
-            <div>
-                <input value={name} type='text' onChange={e => setName(e.target.value)}/>
-                <br />
-                <br />
-                <button onClick={sendNameToServer}>Add Name</button>
-            </div>
-            <div style={{marginTop: '30px'}}>
-                {users.map((user , index) => <h3 key={index}>{user.name}</h3>)}
-            </div>
-        </div>
+        <QueryClientProvider client={queryClient}>
+            <Navbar />
+            <Routes>
+                <Route path='/' element={<Home />}/>
+                <Route path='/courses' element={<Courses />}/>
+            </Routes>
+            <ReactQueryDevtools position='top-right'/>
+        </QueryClientProvider>
     )
 }
 

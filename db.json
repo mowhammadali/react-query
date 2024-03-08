@@ -1,16 +1,24 @@
 {
-  "users": [
+  "courses": [
     {
       "id": "1",
-      "name": "mohammad"
+      "name": "Javascript",
+      "price": "102"
     },
     {
       "id": "2",
-      "name": "jalal"
+      "name": "Angular",
+      "price": "74"
     },
     {
-      "id": "91f35cab-2d53-492c-a33b-7bfb1eace207",
-      "name": "hosein"
+      "id": "3",
+      "name": "React",
+      "price": "206"
+    },
+    {
+      "id": "4",
+      "name": "Php",
+      "price": "50"
     }
   ]
 }

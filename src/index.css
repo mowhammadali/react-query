@@ -3,3 +3,7 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+#nothing {
+    color: #e2e2e2;
+}
