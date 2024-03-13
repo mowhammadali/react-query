@@ -1,0 +1,35 @@
+.productContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 300px;
+    height: auto;
+    padding: 10px;
+    box-shadow: 2px 2px 3px 1px var(--light-shadow) , -2px -2px 3px 1px var(--light-shadow);
+}
+
+.productTitle {
+    color: var(--black-title);
+}
+
+.productBody {
+    color: var(--black-text);
+}
+
+.productPrice {
+    font-weight: 700;
+    color: var(--light-green-text);
+}
+
+.productFooter {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.productLink {
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--blue);
+}

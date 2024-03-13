@@ -1,0 +1,20 @@
+.productsContainer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px 20px;
+    width: 100%;
+    padding: 30px;
+}
+
+@media screen and (max-width: 768px) {
+    .productsContainer {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .productsContainer {
+        justify-content: space-around;
+    }
+}

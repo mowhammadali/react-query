@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
-#nothing {
-    color: #e2e2e2;
+:root {
+    --white-text: #f1f1f1;
+    --black-text: #3a3a3a;
+    --black-title: #333333;
+    --light-green-text: #22aa71;
+    --black-background: #303030;
+    --light-shadow: #ececec;
+    --blue: #0D6EFD;
 }
