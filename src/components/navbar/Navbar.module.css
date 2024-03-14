@@ -1,12 +1,31 @@
 .navbarContainer {
     display: flex;
-    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
     padding: 20px;
     background-color: var(--black-background);
 }
 
+.linkContainer {
+    display: flex;
+    gap: 20px;
+}
+
 .navbarLink {
     color: var(--white-text);
     text-decoration: none;
+}
+
+.activeLink {
+    font-size: 18px;
+    color: var(--light-green-text);
+}
+
+.navbarButton {
+    background-color: var(--blue);
+}
+
+.navbarButton:active {
+    transform: scale(1.05);
 }

@@ -1,11 +1,10 @@
 import React from 'react';
 import styles from './Products.module.css';
 import Product from '../../components/product/Product';
-import { getProducts } from '../../services/api/products/productsApis';
-import { useQuery } from 'react-query';
+import useProducts from '../../hooks/products/useProducts';
 
 const Products = () => {
-    const query = useQuery('products' , getProducts);
+    const query = useProducts(undefined);
     const { data , isLoading } = query;
 
     return (
@@ -13,9 +12,9 @@ const Products = () => {
             {
                 isLoading
                 ?
-                <h>Loading ...</h>
+                <h1>Loading ...</h1>
                 :
-                data.data.map(product => <Product key={product.id} {...product}/>)
+                data.map(product => <Product key={product.id} {...product}/>)
             }
         </div>
     )
