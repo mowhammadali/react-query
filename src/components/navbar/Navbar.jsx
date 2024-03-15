@@ -5,7 +5,7 @@ import useProducts from '../../hooks/products/useProducts';
 import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
-    const { refetch } = useProducts(undefined);
+    const { refetch } = useProducts();
 
     return (
         <div className={styles.navbarContainer}>

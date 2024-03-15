@@ -1,13 +1,13 @@
 import { useQuery } from 'react-query';
 import { getProducts } from '../../services/api/products/productsApis';
 
-const useProducts = (key) => {
+const useProducts = () => {
     return useQuery(
-        ['products' , key] ,
-        getProducts ,
         {
+            queryKey: ['products'],
+            queryFn: getProducts,
             refetchOnMount: true,
-            refetchOnWindowFocus: true,
+            refetchOnWindowFocus: false,
             refetchOnReconnect: true,
             cacheTime: 10000,
             select: data => data.data,

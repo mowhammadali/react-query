@@ -4,7 +4,7 @@ import Product from '../../components/product/Product';
 import useProducts from '../../hooks/products/useProducts';
 
 const Products = () => {
-    const query = useProducts(undefined);
+    const query = useProducts();
     const { data , isLoading } = query;
 
     return (

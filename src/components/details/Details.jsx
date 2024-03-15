@@ -1,5 +1,5 @@
 import React from 'react';
-import useProducts from '../../hooks/products/useProducts';
+import useProduct from '../../hooks/product/useProduct';
 import classNames from 'classnames';
 import styles from './Details.module.css';
 import { Link } from 'react-router-dom';
@@ -8,18 +8,16 @@ import { useParams } from 'react-router-dom';
 const Details = () => {
     let { productId } = useParams();
 
-    const { data , isLoading } = useProducts(productId);
-
-    const matchedProduct = data?.find(product => product.id === productId);
-
+    const { data , isLoading } = useProduct(productId);
+  
     if (isLoading) return <h1>Loading ...</h1>
     
     return (
         <div className={classNames('product-container' , styles.container)}>
-            <h4 className={'product-title'}>{matchedProduct.title}</h4>
-            <p className={'product-body'}>{matchedProduct.body}</p>
+            <h4 className={'product-title'}>{data.title}</h4>
+            <p className={'product-body'}>{data.body}</p>
             <div className={'product-footer'}>
-                <span className={'product-price'}>{matchedProduct.price}</span>
+                <span className={'product-price'}>{data.price}</span>
                 <Link className={'product-link'} to={`/products`}>Back</Link>
             </div>
         </div>
