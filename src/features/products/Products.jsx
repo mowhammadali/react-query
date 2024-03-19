@@ -3,6 +3,7 @@ import styles from "./Products.module.css";
 import Product from "../../components/product/Product";
 import BoxLoading from "../../components/boxLoading/BoxLoading";
 import useProducts from "../../hooks/products/useProducts";
+import useData from "../../hooks/data/useData";
 import classNames from "classnames";
 
 const Products = () => {
@@ -10,8 +11,10 @@ const Products = () => {
     const [page , setPage] = useState(1);
     const pageSize = 6;
     const query = useProducts(page , pageSize);
+    // use multiple query by useQueries
+    const [products , roles] = useData();
     const { data, isLoading } = query;
-
+    
     return (
         <div className={styles.container}>
             <div className={styles.productsContainer}>
