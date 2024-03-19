@@ -1,3 +1,10 @@
 .container {
     margin: 50px auto;
 }
+
+.loadingContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 50px 0;
+}

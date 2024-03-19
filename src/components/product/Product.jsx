@@ -1,7 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-const Product = ({ title , price , image , description , id }) => {
+const Product = ({ title , price , image , description , page , pageSize , id }) => {
+    const navigate = useNavigate();
+    const redirect = () => navigate(`/product/${id}` , {state: {page , pageSize}});
+
     return (
         <div className={'product-container'}>
             <div>
@@ -11,7 +14,7 @@ const Product = ({ title , price , image , description , id }) => {
             <p className={'product-body'}>{description}</p>
             <div className={'product-footer'}>
                 <span className={'product-price'}>{price}$</span>
-                <Link className={'product-link'} to={`/product/${id}`}>Details</Link>
+                <div className={'product-link'} onClick={redirect}>Details</div>
             </div>
         </div>
     )
