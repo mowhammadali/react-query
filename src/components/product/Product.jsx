@@ -1,14 +1,20 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-const Product = ({ title , price , body , id }) => {
+const Product = ({ title , price , image , description , page , pageSize , id }) => {
+    const navigate = useNavigate();
+    const redirect = () => navigate(`/product/${id}` , {state: {page , pageSize}});
+
     return (
         <div className={'product-container'}>
-            <h4 className={'product-title'}>{title}</h4>
-            <p className={'product-body'}>{body}</p>
+            <div>
+                <h4 className={'product-title'}>{title}</h4>
+                <img className='product-img' src={image}/>
+            </div>
+            <p className={'product-body'}>{description}</p>
             <div className={'product-footer'}>
-                <span className={'product-price'}>{price}</span>
-                <Link className={'product-link'} to={`/product/${id}`}>Details</Link>
+                <span className={'product-price'}>{price}$</span>
+                <div className={'product-link'} onClick={redirect}>Details</div>
             </div>
         </div>
     )
