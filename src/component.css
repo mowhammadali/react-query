@@ -9,6 +9,10 @@
     box-shadow: 2px 2px 3px 1px var(--light-shadow) , -2px -2px 3px 1px var(--light-shadow);
 }
 
+.product-img {
+    width: 100%;
+}
+
 .product-title {
     color: var(--black-title);
 }

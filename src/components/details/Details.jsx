@@ -14,10 +14,13 @@ const Details = () => {
     
     return (
         <div className={classNames('product-container' , styles.container)}>
-            <h4 className={'product-title'}>{data.title}</h4>
-            <p className={'product-body'}>{data.body}</p>
+            <div>
+                <h4 className={'product-title'}>{data?.title}</h4>
+                <img className='product-img' src={data?.image}/>
+            </div>
+            <p className={'product-body'}>{data?.description}</p>
             <div className={'product-footer'}>
-                <span className={'product-price'}>{data.price}</span>
+                <span className={'product-price'}>{data?.price}$</span>
                 <Link className={'product-link'} to={`/products`}>Back</Link>
             </div>
         </div>

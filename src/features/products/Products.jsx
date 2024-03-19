@@ -14,7 +14,7 @@ const Products = () => {
                 ?
                 <h1>Loading ...</h1>
                 :
-                data.map(product => <Product key={product.id} {...product}/>)
+                data?.map(product => <Product key={product.id} {...product}/>)
             }
         </div>
     )

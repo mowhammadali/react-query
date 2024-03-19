@@ -10,6 +10,7 @@ const useProduct = (key) => {
             queryFn: getProducts,
             refetchOnWindowFocus: false,
             refetchOnMount: true,
+            refetchOnReconnect: true,
             cacheTime: 20000,
             select: (data) => {
                 const products = data.data;
