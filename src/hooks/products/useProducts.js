@@ -1,5 +1,5 @@
-import { useQuery } from 'react-query';
-import { getProducts } from '../../services/api/products/productsApis';
+import { useQuery , useMutation , useQueryClient  } from 'react-query';
+import { getProducts , postProduct } from '../../services/api/products/productsApis';
 
 const useProducts = (page , pageSize) => {
     return useQuery(
@@ -21,4 +21,17 @@ const useProducts = (page , pageSize) => {
     )
 }
 
-export default useProducts;
+const usePostProducts = () => {
+    const queryClient = useQueryClient();
+
+    return useMutation(product =>  {
+        return postProduct(product);
+    }, 
+    {
+        onSuccess: () => {
+            queryClient.invalidateQueries(['products'])
+        }
+    })
+}
+
+export { useProducts , usePostProducts };

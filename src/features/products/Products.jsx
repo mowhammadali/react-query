@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import styles from "./Products.module.css";
 import Product from "../../components/product/Product";
 import BoxLoading from "../../components/boxLoading/BoxLoading";
-import useProducts from "../../hooks/products/useProducts";
+import { useProducts } from "../../hooks/products/useProducts";
 import useData from "../../hooks/data/useData";
 import classNames from "classnames";
 
 const Products = () => {
-    let loadingArray = Array.from({ length: 6 }, (_, index) => index + 1);
+    let loadingArray = Array.from({ length: 4 }, (_, index) => index + 1);
     const [page , setPage] = useState(1);
     const pageSize = 6;
     const query = useProducts(page , pageSize);
