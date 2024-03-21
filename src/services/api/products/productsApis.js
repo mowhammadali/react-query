@@ -16,3 +16,10 @@ export const postProduct = async (product) => {
     }
     catch (error) { }
 }
+
+export const deleteProduct = async (id) => {
+    try {
+        const response = await axios.delete(`${BASE_URL}/products/${id}`)
+    }
+    catch (error) { }
+}
