@@ -33,6 +33,7 @@ const Navbar = () => {
             <div className={styles.linkContainer}>
                 <NavLink className={p => classNames(styles.navbarLink , p.isActive && styles.activeLink)} to={'/'}>Home</NavLink>
                 <NavLink className={p => classNames(styles.navbarLink , p.isActive && styles.activeLink)} to={'/products'}>Products</NavLink>
+                <NavLink className={p => classNames(styles.navbarLink , p.isActive && styles.activeLink)} to={'/infinite-scroll'}>Infinite Scroll</NavLink>
             </div>
             <div className='d-flex gap-3'>
                 <Form.Control
