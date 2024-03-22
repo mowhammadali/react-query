@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '../components/navbar/Navbar';
 import Home from '../pages/home/Home';
 import Commodity from '../pages/commodity/Commodity ';
+import InfiniteCommodity from '../pages/infiniteCommodity/InfiniteCommodity';
 import Details from '../components/details/Details';
 import { Routes , Route } from 'react-router-dom';
 import { QueryClient , QueryClientProvider } from 'react-query';
@@ -23,6 +24,7 @@ const App = () => {
             <Routes>
                 <Route path='/' element={<Home />}/>
                 <Route path='/products' element={<Commodity />}/>
+                <Route path='/infinite-scroll' element={<InfiniteCommodity />}/>
                 <Route path='/product/:productId' element={<Details />}/>
             </Routes>
             <ReactQueryDevtools position='bottom-right'/>
